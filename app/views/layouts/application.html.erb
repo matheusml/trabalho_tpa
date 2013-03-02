@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TrabalhoTpa</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+	  <title>TrabalhoTpa</title>
+	  <%= stylesheet_link_tag    "application" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div id="user_nav">
+		  <% if current_user %>
+		    Logado como <%= current_user.name %>.
+		    <%= link_to "Sair", log_out_path %>
+		  <% else %>
+		    <%= link_to "Cadastrar", sign_up_path %> or
+		    <%= link_to "Log in", log_in_path %>
+		  <% end %>
+		</div>
 
-<%= yield %>
+		<% flash.each do |name, msg| %>
+		  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+		<% end %>	
 
-</body>
+		<%= yield %>
+
+	</body>
 </html>
