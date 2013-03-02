@@ -1,0 +1,16 @@
+<h1>Catálogos</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+    </tr>
+  </thead>
+  <tbody>
+	<% @catalogues.each do |catalogue| %>
+    <tr>
+      <td><%= link_to catalogue.catalogue_type %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -11,5 +11,8 @@ TrabalhoTpa::Application.routes.draw do
   resources :users
   resources :sessions
   resources :products
+  resources :catalogues
+  
+  match "/products_by_catalogue/:id" => "products#products_by_catalogue", :as => "products_by_catalogue"
 
 end
