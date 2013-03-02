@@ -2,7 +2,6 @@ TrabalhoTpa::Application.routes.draw do
   
   get "sessions/new"
 
-  #root :to => "users#new"
   root :to => "sessions#new"
 
   get "log_out" => "sessions#destroy", :as => "log_out"
@@ -11,5 +10,6 @@ TrabalhoTpa::Application.routes.draw do
 
   resources :users
   resources :sessions
+  resources :products
 
 end
