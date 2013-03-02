@@ -5,4 +5,5 @@ class Product < ActiveRecord::Base
 
 	has_many :product_stocks
 	belongs_to :supplier
+	belongs_to :catalogue
 end
