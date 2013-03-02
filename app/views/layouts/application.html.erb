@@ -22,9 +22,22 @@
         <a class="brand" href="#">Timão's Store</a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li><%= link_to "Produtos", products_path %></li>
-            <li><%= link_to "Catálogos", catalogues_path %></li>
-            <li><%= link_to "Cart" %></li>
+            <li>
+              <%= link_to products_path do %>
+              <i class="icon-th-list"></i> Produtos
+              <% end %>
+            </li>
+            <li>
+              <%= link_to catalogues_path do %>
+              <i class="icon-tag"></i> Catálogos
+              <% end %>
+            </li>
+            <li>
+              <%= link_to catalogues_path do %>
+              <i class="icon-shopping-cart"></i> Carrinho
+              <% end %>
+            </li>
+            
           </ul>
         </div>
 
@@ -33,7 +46,7 @@
 			    	<%= link_to "Sair", log_out_path %>
 			  	<% else %>
 			  		<li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Conta <b class="caret"></b></a>
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>Conta <b class="caret"></b></a>
 		          <ul class="dropdown-menu">
 		            <li><%= link_to "Cadastrar", sign_up_path %></li>
 					    	<li><%= link_to "Log in", log_in_path %></li>
