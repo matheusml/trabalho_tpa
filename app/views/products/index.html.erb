@@ -1,18 +1,4 @@
 <h1>Lista de Produtos</h1>
-
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Preço</th>
-    </tr>
-  </thead>
-  <tbody>
-	<% @products.each do |product| %>
-    <tr>
-      <td><%= product.name %></td>
-      <td><%= product.price %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<div id="products">
+  <%= render :partial => 'products', :locals => {:products => @products} %>
+</div>
