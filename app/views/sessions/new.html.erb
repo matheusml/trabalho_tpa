@@ -1,3 +1,10 @@
+<% if flash[:notice] %>
+	<div class="alert alert-error">
+  	<button type="button" class="close" data-dismiss="alert">&times;</button>
+  	<%= flash[:notice] %>
+	</div>
+<% end %>
+
 <div class="container span4">
 	<div class="well" align="center">
 		<h2>Log in</h2>

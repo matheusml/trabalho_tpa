@@ -2,6 +2,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   helper_method :current_user
+	before_filter :ensure_user_is_authenticated
+
+	def ensure_user_is_authenticated
+		if params["controller"] != "sessions" and !current_user
+			redirect_to root_url 
+		end
+	end
 
 	private
 

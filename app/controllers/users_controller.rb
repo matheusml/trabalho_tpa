@@ -6,7 +6,8 @@ class UsersController < ApplicationController
 	def create
 	  @user = User.new(params[:user])
 	  if @user.save
-	    redirect_to root_url, :notice => "Logado no sistema."
+	    session[:user_id] = @user.id
+	    redirect_to products_path, :notice => "Logado no sistema."
 	  else
 	    render "new"
 	  end
