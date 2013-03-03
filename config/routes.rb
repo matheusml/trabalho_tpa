@@ -12,6 +12,7 @@ TrabalhoTpa::Application.routes.draw do
   resources :sessions
   resources :products
   resources :catalogues
+  resources :carts
   
   match "/products_by_catalogue/:id" => "products#products_by_catalogue", :as => "products_by_catalogue"
   match "/add_to_cart/:product_id" => "carts#add_to_cart", :as => "add_to_cart"
