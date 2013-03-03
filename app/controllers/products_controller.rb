@@ -5,6 +5,6 @@ class ProductsController < ApplicationController
 
 	def products_by_catalogue
 		@catalogue = Catalogue.find params[:id]
-		@products = catalogue.products
+		@products = @catalogue.products
 	end
 end

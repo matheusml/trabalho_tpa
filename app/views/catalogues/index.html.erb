@@ -9,7 +9,7 @@
   <tbody>
 	<% @catalogues.each do |catalogue| %>
     <tr>
-      <td><%= link_to catalogue.catalogue_type %></td>
+      <td><%= link_to catalogue.catalogue_type, products_by_catalogue_path(catalogue) %></td>
     </tr>
   <% end %>
   </tbody>

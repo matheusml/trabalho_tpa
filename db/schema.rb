@@ -11,16 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130302180046) do
+ActiveRecord::Schema.define(:version => 20130303023057) do
 
   create_table "buys", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "customer_id"
+    t.integer  "seller_id"
   end
 
   create_table "cart_items", :force => true do |t|
-    t.integer  "cart_id"
+    t.integer  "item_id"
+    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,9 +63,14 @@ ActiveRecord::Schema.define(:version => 20130302180046) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "cart_id"
     t.integer  "supplier_id"
     t.integer  "catalogue_id"
+  end
+
+  create_table "sellers", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "stocks", :force => true do |t|
@@ -81,7 +88,6 @@ ActiveRecord::Schema.define(:version => 20130302180046) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
-    t.boolean  "admin"
     t.string   "password_hash"
     t.string   "password_salt"
     t.datetime "created_at"
