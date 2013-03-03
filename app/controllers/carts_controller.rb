@@ -5,6 +5,17 @@ class CartsController < ApplicationController
 	end
 
 	def add_to_cart
-		@cart = Cart.create(buy:buy, product_id:params[:product_id])
+		cart = Cart.where(:buy_id => nil).first
+		cart = Cart.create if cart.blank?
+		cart_item = CartItem.create(cart_id:cart.id, product_id:params[:product_id])
+
+		redirect_to carts_path
+	end
+
+	def destroy_cart_item
+		cart_item = CartItem.find params[:id]
+		cart_item.destroy unless cart_item.blank?
+		
+		redirect_to carts_path
 	end
 end

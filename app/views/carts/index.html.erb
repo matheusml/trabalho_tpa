@@ -1,7 +1,22 @@
 <h2>Carrinho</h2>
 
-<ol>
-  <% @cart_items.each do |cart_item| %>
-    <li><%= cart_item.product %></li>
-  <% end %>
-</ol>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Produto</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cart_items.each do |cart_item| %>
+    <tr>
+      <td><%= Product.find(cart_item.product_id).name %></td>
+      <td>
+        <%= link_to destroy_cart_item_path(cart_item), :confirm => "Deseja excluir?" do %>
+          <i class="icon-ban-circle"></i> Cancelar
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

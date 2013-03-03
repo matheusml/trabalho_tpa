@@ -10,7 +10,7 @@
 	<% products.each do |product| %>
     <tr>
       <td><%= product.name %></td>
-      <td><%= product.price %></td>
+      <td><%= number_to_currency(product.price, :unit => 'R$') %></td>
       <td>
       <% if product_on_stock?(product)%>
         <%= link_to add_to_cart_path(product) do %>
