@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
 	validates_presence_of :name, :price
 
 	has_many :product_stocks
-	has_one :product
+	has_one :cart_item
 	belongs_to :supplier
 	belongs_to :catalogue
 end
