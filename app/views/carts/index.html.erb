@@ -5,17 +5,16 @@
     <tr>
       <th>Produto</th>
       <th>Preço</th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
     <% @cart_items.each do |cart_item| %>
     <tr>
       <td><%= Product.find(cart_item.product_id).name %></td>
-      <td><%= number_to_currency(Product.find(cart_item.product_id).price, :unit => "R$") %></td>
       <td>
+        <%= number_to_currency(Product.find(cart_item.product_id).price, :unit => "R$") %>
         <%= link_to destroy_cart_item_path(cart_item), :confirm => "Deseja excluir?" do %>
-          <i class="icon-ban-circle"></i> Cancelar
+          <i class="icon-remove"></i>
         <% end %>
       </td>
     </tr>
@@ -23,8 +22,13 @@
     <tr>
       <td><strong>Quantidade: <%= @cart_items.count %></strong></td>
       <td><strong>Total: <%= sum_of_products(@cart_items) %></strong></td>
-      <td></td>
     </tr>
   </tbody>
 </table>
+
+<div style="max-width: 300px; margin: 0 auto 10px;">
+  <%= link_to carts_path, :class => "btn btn-large btn-block btn-primary" do %>
+    <i class="icon-ok-sign"></i> Concluir a compra 
+  <% end %>
+</div>
 
