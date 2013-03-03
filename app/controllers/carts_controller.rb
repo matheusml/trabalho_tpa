@@ -20,6 +20,12 @@ class CartsController < ApplicationController
 	end
 
 	def cart_checkout
-		
+		@cart = Cart.where(:buy_id => nil).first
+		@cart.blank? ? @cart_items = [] : @cart_items = @cart.cart_items
+		@sellers = Seller.all
+	end
+
+	def cart_seller
+		puts "--- #{params}"
 	end
 end

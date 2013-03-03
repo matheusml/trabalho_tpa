@@ -1,0 +1,13 @@
+<h2>Vendedor</h2>
+
+<%= form_tag cart_seller_path(@cart) do %>
+  <%= label_tag "Selecione o vendedor:" %>
+  <%= select_tag "Vendedor", options_from_collection_for_select(@sellers, "id", "name") %>
+<% end %>
+
+<div style="max-width: 300px; margin: 0 auto 10px;">
+  <%= link_to cart_checkout_path, :class => "btn btn-large btn-block btn-primary" do %>
+    <i class="icon-ok-sign"></i> Concluir a compra 
+  <% end %>
+</div>
+

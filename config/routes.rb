@@ -18,5 +18,6 @@ TrabalhoTpa::Application.routes.draw do
   match "/add_to_cart/:product_id" => "carts#add_to_cart", :as => "add_to_cart"
   match "/destroy_cart_item/:id" => "carts#destroy_cart_item", :as => "destroy_cart_item"
   match "/cart_checkout" => "carts#cart_checkout", :as => "cart_checkout"
+  match "/cart_seller" => "carts#cart_seller", :as => "cart_seller"
 
 end
