@@ -18,4 +18,8 @@ class CartsController < ApplicationController
 		
 		redirect_to carts_path
 	end
+
+	def cart_checkout
+		
+	end
 end

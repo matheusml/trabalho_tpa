@@ -27,8 +27,11 @@
 </table>
 
 <div style="max-width: 300px; margin: 0 auto 10px;">
-  <%= link_to carts_path, :class => "btn btn-large btn-block btn-primary" do %>
+  <%= link_to cart_checkout_path, :class => "btn btn-large btn-block btn-primary" do %>
     <i class="icon-ok-sign"></i> Concluir a compra 
+  <% end %>
+  <%= link_to carts_path, :class => "btn btn-large btn-block" do %>
+    <i class="icon-ban-circle"></i> Cancelar 
   <% end %>
 </div>
 
