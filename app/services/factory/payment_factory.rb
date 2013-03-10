@@ -2,7 +2,7 @@ module Factory
 	class PaymentFactory
 		def initialize(payment, value_paid)
 			if payment == "Dinheiro"
-				money = Money.new(:change => value_paid)
+				money = Money.new(:value_paid => value_paid)
 				payment = Payment.new
 				payment.payable = money
 				payment.save
