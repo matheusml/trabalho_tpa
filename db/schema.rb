@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130310152603) do
+ActiveRecord::Schema.define(:version => 20130310172934) do
 
   create_table "buys", :force => true do |t|
     t.datetime "created_at"
@@ -39,6 +39,11 @@ ActiveRecord::Schema.define(:version => 20130310152603) do
     t.datetime "updated_at"
   end
 
+  create_table "credits", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "customers", :force => true do |t|
     t.string   "name"
     t.string   "cpf"
@@ -48,6 +53,17 @@ ActiveRecord::Schema.define(:version => 20130310152603) do
     t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "debits", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "money", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "value_paid"
   end
 
   create_table "payments", :force => true do |t|

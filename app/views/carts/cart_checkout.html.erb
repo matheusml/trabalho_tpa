@@ -1,13 +1,23 @@
+<%= javascript_include_tag "cart_checkout" %>
+
 <h2>Vendedor</h2>
 
-<%= form_tag cart_seller_path(@cart) do %>
+<%= form_tag cart_seller_path do %>
   <%= label_tag "Selecione o vendedor:" %>
-  <%= select_tag "Vendedor", options_from_collection_for_select(@sellers, "id", "name") %>
+  <%= select_tag :seller, options_from_collection_for_select(@sellers, "id", "name") %>
+
+  <%= label_tag "Selecione a forma de pagamento:" %>
+  <%= select_tag :payment, options_for_select(@payments, "type") %>
+
+  <div id="payed_value" style="display:none;">
+    <%= label_tag "Valor pago:" %>
+    <%= text_field_tag :value_paid %>
+  </div>
+
+  <div style="max-width: 300px; margin: 0 auto 10px;">
+    <%= submit_tag "Concluir a compra", :class => "btn btn-large btn-block btn-primary" %>
+  </div>
 <% end %>
 
-<div style="max-width: 300px; margin: 0 auto 10px;">
-  <%= link_to cart_checkout_path, :class => "btn btn-large btn-block btn-primary" do %>
-    <i class="icon-ok-sign"></i> Concluir a compra 
-  <% end %>
-</div>
+
 
