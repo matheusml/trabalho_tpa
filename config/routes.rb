@@ -1,5 +1,4 @@
 TrabalhoTpa::Application.routes.draw do
-  
   get "sessions/new"
 
   root :to => "sessions#new"
@@ -19,5 +18,5 @@ TrabalhoTpa::Application.routes.draw do
   match "/destroy_cart_item/:id" => "carts#destroy_cart_item", :as => "destroy_cart_item"
   match "/cart_checkout" => "carts#cart_checkout", :as => "cart_checkout"
   match "/cart_seller" => "carts#cart_seller", :as => "cart_seller"
-
+  match "/cart_conclusion/:id" => "carts#cart_conclusion", :as => "cart_conclusion"
 end
