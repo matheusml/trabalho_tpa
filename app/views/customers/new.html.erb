@@ -1,0 +1,22 @@
+<h2>Cadastro de clientes</h2>
+
+<%= form_tag customers_path do %>
+  <%= label_tag "Nome:" %>
+  <%= text_field_tag :name %>
+
+  <%= label_tag "CPF:" %>
+  <%= text_field_tag :cpf %>
+
+  <%= label_tag "Identidade:" %>
+  <%= text_field_tag :identity %>
+
+  <%= label_tag "E-mail:" %>
+  <%= text_field_tag :email %>
+
+  <%= label_tag "Preferencial:" %>
+  <%= check_box_tag :preferential %>
+
+  <div style="max-width: 300px; margin: 0 auto 10px;">
+    <%= submit_tag "Salvar", :class => "btn btn-large btn-block btn-primary" %>
+  </div>
+<% end %>

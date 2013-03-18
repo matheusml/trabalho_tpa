@@ -28,6 +28,7 @@ class CartsController < ApplicationController
 
 	def cart_seller
 		customer = customer_find_or_create_by_cpf(params[:cpf])
+		customer.update_points
 		payment = Factory::PaymentFactory.new(params[:payment], params[:value_paid])
 		buy = Buy.create(:seller_id => params[:seller], 
 										 :payment => Payment.last, 
@@ -40,7 +41,8 @@ class CartsController < ApplicationController
 
 	def cart_conclusion
 		buy = Buy.find(params[:id])
-		@change = buy.change		
+		@change = buy.change
+		@customer = buy.customer		
 	end
 
 	private
