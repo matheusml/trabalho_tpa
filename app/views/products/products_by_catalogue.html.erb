@@ -1,0 +1,4 @@
+<h1>Lista de Produtos do Catálogo <%= @catalogue.catalogue_type %></h1>
+<div id="products">
+  <%= render :partial => 'products', :locals => {:products => @products} %>
+</div>

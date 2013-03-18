@@ -1,0 +1,14 @@
+$(document).ready(function() {
+
+		$('#payment').bind('change', function(e){
+				var payment = $('#payment').val();
+				if(payment == "Dinheiro"){
+					$('#value_paid').show('slow');
+				}
+				else{
+					$('#value_paid').hide('slow');
+				}
+
+		});
+
+});

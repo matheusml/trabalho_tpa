@@ -1,0 +1,13 @@
+<h2>Compra efetuada com sucesso.</h2>
+
+<% if @change == 0 %>
+	<h3>Obrigado, não há troco.</h3>
+<% else %>
+	<h3>Obrigado, seu troco é <%= number_to_currency(@change, :unit => "R$") %>.</h3>
+<% end %>
+
+<% if @customer.points %>
+	<h4>Você tem <%= @customer.points %> pontos para gastar!</h4>
+<% else %>
+	<h4>Você ainda não possui pontos.</h4>
+<% end %>	

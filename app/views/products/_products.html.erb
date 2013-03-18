@@ -1,0 +1,26 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Carrinho</th>
+    </tr>
+  </thead>
+  <tbody>
+	<% products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= number_to_currency(product.price, :unit => 'R$') %></td>
+      <td>
+      <% if product_on_stock?(product)%>
+        <%= link_to add_to_cart_path(product) do %>
+          <i class="icon-ok"></i> Adicionar no carrinho
+        <% end %>
+      <% else %>
+         <i class="icon-ban-circle"></i> Produto indisponível
+      <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

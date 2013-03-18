@@ -1,0 +1,26 @@
+<%= javascript_include_tag "cart_checkout" %>
+
+<h2>Checkout</h2>
+
+<%= form_tag cart_seller_path do %>
+  <%= label_tag "CPF:" %>
+  <%= text_field_tag :cpf %>
+
+  <%= label_tag "Selecione o vendedor:" %>
+  <%= select_tag :seller, options_from_collection_for_select(@sellers, "id", "name") %>
+
+  <%= label_tag "Selecione a forma de pagamento:" %>
+  <%= select_tag :payment, options_for_select(@payments, "type") %>
+
+  <div id="value_paid" style="display:none;">
+    <%= label_tag "Valor pago:" %>
+    <%= text_field_tag :value_paid %>
+  </div>
+
+  <div style="max-width: 300px; margin: 0 auto 10px;">
+    <%= submit_tag "Avançar", :class => "btn btn-large btn-block btn-primary" %>
+  </div>
+<% end %>
+
+
+
